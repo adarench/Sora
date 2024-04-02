@@ -1,0 +1,70 @@
+sora/
+├── src/
+│   ├── components/                    # UI Layer
+│   │   ├── ChatWindow.tsx             # UI for chat and Sora interactions
+│   │   ├── CostRecommendationsTable.tsx # UI for displaying cost-saving recommendations
+│   │   ├── Layout.tsx                 # General UI layout
+│   │   ├── NavBar.tsx                 # UI for navigation bar
+│   │   └── SoraLogo.tsx               # Sora branding
+│   │
+│   ├── pages/                         # UI Layer
+│   │   ├── api/trpc/                  # Integration Layer for tRPC (Typed Remote Procedure Calls)
+│   │   │   └── [trpc].ts              # API routing for tRPC
+│   │   │
+│   │   ├── aws/                       # UI Layer for AWS specific features
+│   │   │   └── index.tsx              # Entry point for AWS services UI
+│   │   │
+│   │   ├── chat/                      # UI Layer for chat functionality
+│   │   │   └── [recommendationId].tsx # Individual chat UI components for recommendations
+│   │   │
+│   │   ├── dashboard/                 # UI Layer for the main dashboard
+│   │   │   └── index.tsx              # Main dashboard UI
+│   │   │
+│   │   ├── onboarding/                # UI Layer for user onboarding
+│   │   │   └── index.tsx              # Onboarding process UI
+│   │   │
+│   │   └── recommendations/           # UI & Recommendation Engine Layer
+│   │       ├── index.tsx              # Lists all recommendations
+│   │       └── [recommendationId].tsx # Detailed view for specific recommendations
+│   │
+│   ├── server/                        # Server Layer
+│   │   ├── api/                       # API Layer
+│   │   │   └── routers/               # Routers for handling API requests
+│   │   │       └── root.ts            # Root API router
+│   │   │
+│   │   ├── db.ts                      # Database Integration Layer
+│   │   └── trpc.ts                    # Server-side for tRPC
+│   │
+│   ├── services/                      # Business Logic Layer
+│   │   ├── recommendationsService.ts  # Supervised ML for personalized cost recommendations.
+│   │   ├── awsDataService.ts          # Data collection for all ML services.
+│   │   ├── anomalyDetectionService.ts # Unsupervised ML for anomaly detection in infrastructure.
+│   │   └── complianceService.ts       # Rule-based systems and supervised ML for security.
+            forecastingService.ts      # Predictive analytics for cost and resource forecasting.
+│   │
+│   ├── utils/                         # Utility Layer
+│   │   ├── apiUtils.ts                # Helpers for API calls
+│   │   ├── dataUtils.ts               # Helpers for data processing
+│   │   └── securityUtils.ts           # Helpers for security checks
+│   │
+│   └── types/                         # Types Layer
+│       └── index.ts                   # Centralized type definitions
+│
+├── public/                            # Public Assets Layer
+│   └── assets/
+│       ├── images/
+│       │   └── ...                    # Images such as logos, icons, etc.
+│       └── styles/
+│           └── ...                    # CSS/SASS/LESS files
+│
+├── terraform/                         # Automation and Orchestration Layer
+│   └── aws_infra.tf                   # Terraform templates for AWS infrastructure
+│
+├── scripts/                           # Automation and Orchestration Layer
+│   └── applyRecommendations.ts       # Script to apply recommendations to AWS
+│
+├── monitoring/                        # Monitoring and Logging Layer
+│   └── cloudwatchConfigs.ts           # Configurations for AWS CloudWatch
+│
+├── package.json                       # Project metadata and dependencies
+└── tsconfig.json                      # TypeScript configuration
