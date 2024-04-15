@@ -31,6 +31,6 @@
     "**/*.mjs",
     ".next/types/**/*.ts",
     "src/pages/_document.js"
-  ],
+, "src/server/database/database.js"  ],
   "exclude": ["node_modules"]
 }
